@@ -40,72 +40,9 @@ const saveToFile = async () => {
     fileContent.value = await invoke('write_to_file', {content: text.value})
 }
 
-
-onMounted(async () => {
-    const fileSubmenu = await Submenu.new({
-        text: 'File',
-        items: [
-            await MenuItem.new({
-                id: 'new',
-                text: 'New',
-                action: () => {
-                    console.log('New clicked');
-                },
-            }),
-            await MenuItem.new({
-                id: 'open',
-                text: 'Open',
-                action: () => {
-                    console.log('Open clicked');
-                },
-            }),
-            await MenuItem.new({
-                id: 'save_as',
-                text: 'Save As...',
-                action: () => {
-                    console.log('Save As clicked');
-                },
-            }),
-        ],
-    });
-
-    const editSubmenu = await Submenu.new({
-        text: 'Edit',
-        items: [
-            await MenuItem.new({
-                id: 'undo',
-                text: 'Undo',
-                action: () => {
-                    console.log('Undo clicked');
-                },
-            }),
-            await MenuItem.new({
-                id: 'redo',
-                text: 'Redo',
-                action: () => {
-                    console.log('Redo clicked');
-                },
-            }),
-        ],
-    });
-
-    const menu = await Menu.new({
-        items: [
-            fileSubmenu,
-            editSubmenu,
-            await MenuItem.new({
-                id: 'quit',
-                text: 'Quit',
-                action: () => {
-                    console.log('Quit pressed');
-                },
-            }),
-        ],
-    });
-
-    await menu.setAsAppMenu();
-});
-
+const onNew = () => console.log('新建 clicked')
+const onOpen = () => console.log('打开 clicked')
+const onSaveAs = () => console.log('另存为 clicked')
 </script>
 <style>
 body {
