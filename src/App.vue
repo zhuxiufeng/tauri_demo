@@ -3,7 +3,9 @@
         <!-- 顶部菜单栏 -->
         <div class="menu-bar">
             <el-button text icon="Plus" @click="onNew">新建</el-button>
+            <el-divider direction="vertical" />
             <el-button text icon="FolderOpened" @click="onOpen">打开</el-button>
+            <el-divider direction="vertical" />
             <el-button text icon="Download" @click="onSaveAs">另存为</el-button>
         </div>
 
@@ -82,4 +84,33 @@ body {
     border-radius: 10px;
     font-size: 14px;
 }
+.menu-bar {
+    display: flex;
+    padding: 12px 24px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    /*gap: 12px;*/
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.content-box {
+    background-color: white;
+    padding: 24px 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 520px;
+    width: 100%;
+}
+.menu-bar .el-divider--vertical {
+    margin: 0 8px;
+}
+
+
+
 </style>
